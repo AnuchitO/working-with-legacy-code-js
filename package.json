@@ -1,0 +1,14 @@
+{
+  "name": "working-with-legacy-code-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest test"
+  },
+  "author": "AnuchitO",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.0.6"
+  }
+}
