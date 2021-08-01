@@ -1,5 +1,9 @@
 
 function statement(invoice, plays) {
+    function playFor(aPerformance) {
+        return plays[aPerformance.playID]
+    }
+
     let totalAmount = 0
     let volumeCredits = 0
     let result = `Statement for ${invoice.customer}\n`
@@ -10,7 +14,7 @@ function statement(invoice, plays) {
         }).format
 
     for (let perf of invoice.performances) {
-        const play = plays[perf.playID]
+        const play = playFor(perf)
 
         let thisAmount = amountFor(perf, play)
 
@@ -27,7 +31,6 @@ function statement(invoice, plays) {
     result += `You earned ${volumeCredits} credits\n`
     return result
 }
-
 
 function amountFor(aPerformance, play) {
     let result = 0
