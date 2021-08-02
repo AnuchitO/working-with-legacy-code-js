@@ -8,7 +8,12 @@ function statement(invoice, plays) {
 
     function enrichPerforrmance(aPerformance) {
         const result = Object.assign({}, aPerformance)
+        result.play = playFor(result)
         return result
+    }
+
+    function playFor(aPerformance) {
+        return plays[aPerformance.playID]
     }
 }
 
