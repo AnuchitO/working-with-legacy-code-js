@@ -53,8 +53,6 @@ function statement(invoice, plays) {
         return volumeCredits
     }
 
-    let volumeCredits = totalVolumeCredits()
-
     let totalAmount = 0
     let result = `Statement for ${invoice.customer}\n`
     for (let perf of invoice.performances) {
@@ -63,7 +61,7 @@ function statement(invoice, plays) {
         totalAmount += amountFor(perf)
     }
     result += `Amount owed is ${usd(totalAmount)}\n`
-    result += `You earned ${volumeCredits} credits\n`
+    result += `You earned ${totalVolumeCredits()} credits\n`
     return result
 }
 
