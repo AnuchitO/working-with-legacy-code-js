@@ -30,10 +30,6 @@ function renderPlainText(data, plays) {
     result += `You earned ${totalVolumeCredits()} credits\n`
     return result
 
-    function playFor(aPerformance) {
-        return plays[aPerformance.playID]
-    }
-
     function amountFor(aPerformance) {
         let result = 0
         switch (aPerformance.play.type) {
