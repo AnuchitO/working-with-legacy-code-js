@@ -52,7 +52,9 @@ function statement(invoice, plays) {
     for (let perf of invoice.performances) {
         // add volume credits
         volumeCredits += volumeCreditsFor(perf)
+    }
 
+    for (let perf of invoice.performances) {
         // print line for this order
         result += `  ${playFor(perf).name}: ${usd(amountFor(perf))} (${perf.audience} seats)\n`
         totalAmount += amountFor(perf)
