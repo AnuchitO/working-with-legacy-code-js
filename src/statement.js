@@ -23,7 +23,7 @@ function renderPlainText(data, plays) {
     let result = `Statement for ${data.customer}\n`
     for (let perf of data.performances) {
         // print line for this order
-        result += `  ${playFor(perf).name}: ${usd(amountFor(perf))} (${perf.audience} seats)\n`
+        result += `  ${perf.play.name}: ${usd(amountFor(perf))} (${perf.audience} seats)\n`
     }
 
     result += `Amount owed is ${usd(totalAmount())}\n`
