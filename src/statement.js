@@ -44,16 +44,15 @@ function statement(invoice, plays) {
             }).format(aNumber / 100);
     }
 
-    let totalAmount = 0
+
     let volumeCredits = 0
-    let result = `Statement for ${invoice.customer}\n`
-
-
     for (let perf of invoice.performances) {
         // add volume credits
         volumeCredits += volumeCreditsFor(perf)
     }
 
+    let totalAmount = 0
+    let result = `Statement for ${invoice.customer}\n`
     for (let perf of invoice.performances) {
         // print line for this order
         result += `  ${playFor(perf).name}: ${usd(amountFor(perf))} (${perf.audience} seats)\n`
